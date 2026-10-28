@@ -253,9 +253,9 @@ function IDCard() {
   }, []);
   const [flipped, setFlipped] = useState(false); const [tilt,setTilt] = useState({x:0,y:0}); const card=useRef<HTMLDivElement>(null); const drag=useRef({x:0,y:0,active:false});
   function move(e:React.PointerEvent) { if (e.pointerType !== 'mouse' || !card.current) return; const r=card.current.getBoundingClientRect(); setTilt({x:((e.clientY-r.top)/r.height-.5)*-4,y:((e.clientX-r.left)/r.width-.5)*4}); }
-  function down(e:React.PointerEvent) { if(e.pointerType==='mouse' && e.button===0) drag.current={x:e.clientX,y:e.clientY,active:true}; }
+  function down(e:React.PointerEvent) { if((e.pointerType==='mouse' && e.button!==0) || (e.pointerType!=='mouse' && e.pointerType!=='touch')) return; drag.current={x:e.clientX,y:e.clientY,active:true}; }
   function up(e:React.PointerEvent) { if(!drag.current.active)return; const dx=e.clientX-drag.current.x,dy=e.clientY-drag.current.y; drag.current.active=false; if(Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)*1.2)setFlipped(dx<0); }
-  return <main className="home-shell"><div className="desk-note"><span></span><span></span></div><div className="stage" onPointerMove={move} onPointerLeave={()=>setTilt({x:0,y:0})} onPointerDown={down} onPointerUp={up}>
+  return <main className="home-shell"><div className="desk-note"><span></span><span></span></div><div className="stage" onPointerMove={move} onPointerLeave={()=>setTilt({x:0,y:0})} onPointerDown={down} onPointerUp={up} onPointerCancel={()=>{drag.current.active=false;setTilt({x:0,y:0})}}>
     <div ref={card} className={`id-card ${flipped?'is-flipped':''}`} style={{'--tilt-x':`${tilt.x}deg`,'--tilt-y':`${tilt.y}deg`} as React.CSSProperties}>
       <article className="card-face card-front" aria-label="Front of portfolio identity card" aria-hidden={flipped} inert={flipped}>
         <div className="card-grain"/><div className="card-top"><span className="micro">MF / 0067-IN</span><span className="status"><i/> PERSONAL PORTFOLIO</span><span className="micro">ISSUED 2026</span></div>

@@ -744,6 +744,92 @@
   .scribble { right: 3%; bottom: 3%; font-size: 8px; }
 }
 
+/* Compact landscape card for phones, preserving the desktop card orientation. */
+@media (max-width: 430px) {
+  .id-card {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1.15 / 1;
+  }
+  .card-face { padding: 10px 11px 8px; }
+  .card-front .card-top { min-height: 15px; padding: 0 2px 4px; }
+  .card-front .status { gap: 4px; padding: 3px 5px; }
+  .card-front .card-top .micro { font-size: 4.5px; }
+  .card-front .card-title { margin-top: 6px; }
+  .card-front .eyebrow { padding: 2px 4px; font-size: 5px; }
+  .card-front .card-title h1 { margin-top: 4px; font-size: clamp(25px, 7.3vw, 29px); }
+  .card-front .title-stamp { left: calc(100% + 5px); width: 25px; height: 43px; }
+  .card-front .identity { min-height: 62px; margin-top: 7px; gap: 7px; }
+  .card-front .portrait { width: 55px; height: 66px; flex-basis: 55px; border-width: 3px; }
+  .card-front .portrait small { top: 3px; left: 3px; font-size: 5px; }
+  .card-front .portrait-caption { right: 2px; bottom: 2px; padding: 2px; font-size: 3px; }
+  .card-front .identity-copy { grid-template-columns: minmax(82px, 1fr) minmax(88px, .9fr); column-gap: 4px; }
+  .card-front .identity-copy > .micro { font-size: 4.5px; }
+  .card-front .identity-copy h2 { font-size: 16px; }
+  .card-front .roleline { font-size: 4.5px; line-height: 1.45; }
+  .card-front .roleline .red-dot { width: 4px; height: 4px; margin-right: 3px; }
+  .card-front .role-indent { margin-left: 7px; }
+  .card-front .clock-wrap { min-height: 53px; gap: 2px; padding: 4px; }
+  .card-front .clock-head { font-size: 4px; }
+  .card-front .clock-date,
+  .card-front .clock-zone,
+  .card-front .weather-trigger,
+  .card-front .weather-result { font-size: 4px; }
+  .card-front .clock-time { font-size: 11px; line-height: 1; }
+  .card-front .card-rule { margin: 5px 0 3px; }
+  .card-front .sections-head { margin-bottom: 2px; font-size: 4.5px; }
+  .card-front .card-nav { gap: 2px; }
+  .card-front .card-nav a { min-height: 22px; padding: 3px 2px; gap: 2px; }
+  .card-front .card-nav span { font-size: 4px; }
+  .card-front .card-nav b { font-size: 5px; letter-spacing: 0; }
+  .card-front .card-nav i { display: none; }
+  .card-front .archive-band { min-height: 24px; grid-template-columns: minmax(0, 1fr) minmax(38px, 30%); gap: 5px; padding: 3px 5px; }
+  .card-front .archive-details { font-size: 4px; }
+  .card-front .archive-details strong { font-size: 4.5px; }
+  .card-front .archive-barcode { height: 13px; }
+  .card-front .card-bottom { padding-top: 4px; font-size: 4.5px; }
+  .card-front .flip-control { padding: 2px; font-size: 5px; }
+  .card-front .flip-control b { font-size: 9px; }
+  .card-front .card-bottom .micro { font-size: 4px; }
+
+  .card-back .back-head { font-size: 5px; }
+  .card-back .sticker-field { margin: 5px 1px 4px; }
+  .card-back .sticker-sun { left: 2%; top: 3%; width: 40px; height: 40px; border-width: 3px; font-size: 5px; }
+  .card-back .sticker-sun i { font-size: 12px; }
+  .card-back .sticker-data { left: 24%; top: 7%; width: 38px; height: 38px; }
+  .card-back .sticker-data b { font-size: 18px; }
+  .card-back .sticker-data small,
+  .card-back .sticker-learn small { font-size: 4.5px; }
+  .card-back .sticker-build { left: 45%; top: 2%; width: 40px; height: 40px; font-size: 5px; }
+  .card-back .sticker-build i { font-size: 10px; }
+  .card-back .sticker-learn { left: 72%; top: 7%; width: 38px; height: 38px; border-width: 3px; }
+  .card-back .sticker-learn b { font-size: 18px; }
+  .card-back .sticker-idea { left: 46%; top: 48%; width: 38px; height: 38px; font-size: 5px; }
+  .card-back .sticker-curiosity { left: 62%; top: 66%; width: 35px; height: 35px; }
+  .card-back .sticker-curiosity b { font-size: 11px; }
+  .card-back .sticker-curiosity small { font-size: 4px; }
+  .card-back .sticker-datapoint { left: 82%; top: 41%; width: 34px; height: 34px; padding: 2px; font-size: 4px; }
+  .card-back .tic-game { display: block; top: 27%; left: 2%; width: 86px; padding: 4px; }
+  .card-back .tic-game-top { font-size: 3.5px; }
+  .card-back .tic-game-title { margin: 3px 0 4px; font-size: 6px; }
+  .card-back .tic-game-title button { padding: 1px 3px; font-size: 8px; }
+  .card-back .tic-board { gap: 1px; }
+  .card-back .tic-cell { font-size: 16px; }
+  .card-back .tic-game-status { min-height: 10px; margin-top: 3px; font-size: 4px; }
+  .card-back .scribble { right: 3%; bottom: 2%; font-size: 7px; }
+  .card-back .back-lower { grid-template-columns: minmax(50px, 1fr) auto minmax(50px, 1fr); gap: 5px; padding: 3px 0 4px; }
+  .card-back .qr-grid { grid-template-columns: repeat(7, 4px); grid-auto-rows: 4px; gap: 1px; padding: 2px; }
+  .card-back .qr-placeholder > span { font-size: 3.5px; }
+  .card-back .social-icons { gap: 2px; }
+  .card-back .social-icon { width: 16px; height: 18px; }
+  .card-back .social-icon svg { width: 13px; height: 13px; }
+  .card-back .back-headline { font-size: 7px; }
+  .card-back .card-bottom { padding-top: 4px; font-size: 4.5px; }
+  .card-back .flip-control { padding: 2px; font-size: 5px; }
+  .card-back .card-bottom .micro { font-size: 4px; }
+}
+
 html,
 body {
   cursor: url('/portfolio-cursor.svg') 4 3, auto;
