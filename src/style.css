@@ -694,6 +694,29 @@
   .home-caption { margin-top: 12px; }
 }
 
+/* Avoid mobile browser 3D backface glitches by swapping card faces directly. */
+@media (max-width: 720px) {
+  .id-card,
+  .id-card.is-flipped {
+    transform: none;
+    transform-style: flat;
+    -webkit-transform: none;
+    -webkit-transform-style: flat;
+  }
+  .card-face,
+  .card-back {
+    transform: none;
+    -webkit-transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    transition: opacity .2s ease;
+  }
+  .id-card .card-front { visibility: visible; opacity: 1; }
+  .id-card .card-back { visibility: hidden; opacity: 0; }
+  .id-card.is-flipped .card-front { visibility: hidden; opacity: 0; }
+  .id-card.is-flipped .card-back { visibility: visible; opacity: 1; }
+}
+
 html,
 body {
   cursor: url('/portfolio-cursor.svg') 4 3, auto;
