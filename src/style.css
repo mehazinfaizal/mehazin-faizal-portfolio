@@ -674,6 +674,26 @@
 .card-top > :last-child,
 .back-head > :last-child { justify-self: end; }
 
+/* The ID card needs a portrait layout on phones so none of its controls are clipped. */
+@media (max-width: 430px) {
+  .home-shell {
+    min-height: 100svh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .stage { width: 100%; }
+  .id-card {
+    width: 100%;
+    height: clamp(460px, calc(100svh - 220px), 540px);
+    min-height: 460px;
+    aspect-ratio: auto;
+  }
+  .home-caption { margin-top: 12px; }
+}
+
 html,
 body {
   cursor: url('/portfolio-cursor.svg') 4 3, auto;
