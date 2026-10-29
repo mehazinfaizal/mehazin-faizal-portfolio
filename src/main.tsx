@@ -478,8 +478,8 @@ function Experience() {
             </ul>
             <h3 className="experience-label">THE PAYOFF</h3>
             <ul>
-              <li><strong>60%</strong> improvement in reporting efficiency.</li>
-              <li><strong>60%</strong> improvement in data accuracy.</li>
+              <li><strong>63%</strong> improvement in reporting efficiency.</li>
+              <li><strong>71%</strong> improvement in data accuracy.</li>
               <li><strong>15 hours per week</strong> saved through automated reporting and reconciliation.</li>
               <li><strong>100%</strong> of identified discrepancies resolved within 24 hours.</li>
             </ul>
