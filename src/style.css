@@ -757,7 +757,7 @@
     min-height: 0;
     aspect-ratio: 1.15 / 1;
   }
-  .card-face { padding: 10px 11px 8px; }
+  .card-face { padding: 16px 18px 14px; }
   .card-front .card-top { min-height: 15px; padding: 0 2px 4px; }
   .card-front .status { gap: 4px; padding: 3px 5px; }
   .card-front .card-top .micro { font-size: 4.5px; }
