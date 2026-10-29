@@ -259,6 +259,7 @@ function IDCard() {
     <div ref={card} className={`id-card ${flipped?'is-flipped':''}`} style={{'--tilt-x':`${tilt.x}deg`,'--tilt-y':`${tilt.y}deg`} as React.CSSProperties}>
       <article className="card-face card-front" aria-label="Front of portfolio identity card" aria-hidden={flipped} inert={flipped}>
         <div className="card-grain"/><div className="card-top"><span className="micro">MF / 0067-IN</span><span className="status"><i/> PERSONAL PORTFOLIO</span><span className="micro">ISSUED 2026</span></div>
+        <div className="card-logo" aria-label="Mehazin Faizal logo"><img src="/mehazin-logo.png" alt="Mehazin Faizal monogram logo" /></div>
         <div className="card-title"><span className="eyebrow">PERSONAL ARCHIVE</span><h1>PORTFOLIO<br/><em>ID CARD</em></h1><div className="title-stamp"><img src="/stamp_7.png" alt="Kerala postage stamp" /></div></div> 
         
         <div className="identity"><div className="portrait"><img className="portrait-photo" src="/mehazin-photo.jpeg" alt="Mehazin Faizal"/><small>Manali</small><span className="portrait-caption">JAN / 2025</span></div><div className="identity-copy"><span className="micro">CARDHOLDER</span><h2>MEHAZIN<br/>FAIZAL<span>®</span></h2><div className="roleline"><span className="red-dot"/> DATA ALCHEMIST<br/><span className="role-indent">Shutterbug</span></div><LocalClock now={now}/></div></div>
